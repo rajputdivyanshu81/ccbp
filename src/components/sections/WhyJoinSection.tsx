@@ -1,152 +1,233 @@
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, X, Zap } from "lucide-react";
+"use client";
 
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Check, X } from "lucide-react";
+
+// Comparison data
 const comparisonData = [
   {
     feature: "Curriculum",
-    nxtwave: "Industry-aligned, reverse-engineered from 3000+ companies",
-    others: "Generic, outdated content",
+    intensive: "Designed as per companies' current requirements",
+    others: "Not industry-aligned",
+    intensiveCheck: true,
+    othersCheck: false,
   },
   {
-    feature: "Doubt Resolution",
-    nxtwave: "Live support 11 AM - 8 PM with 1500+ mentors",
-    others: "Limited support, long wait times",
+    feature: "Doubts Clarification",
+    intensive: "9AM - 9PM Doubt Clarification. 1500+ Mentors to help you.",
+    others: "Only 1-2 hours per day",
+    intensiveCheck: true,
+    othersCheck: false,
   },
   {
     feature: "Trainers",
-    nxtwave: "IIT/NIT Alumni with 10+ years experience",
-    others: "Fresher or inexperienced trainers",
+    intensive: "Alumni of IIT & Top MNCs like Amazon, Microsoft. Built world-class products",
+    others: "No real world project experience",
+    intensiveCheck: true,
+    othersCheck: false,
   },
   {
-    feature: "Placement Support",
-    nxtwave: "Up to 16 months with dedicated placement manager",
-    others: "3-6 months basic support",
+    feature: "Placements Record",
+    intensive: "Proven results for every branch, degree, CGPA",
+    others: "For only select branches, degrees",
+    intensiveCheck: true,
+    othersCheck: false,
   },
   {
-    feature: "Mock Interviews",
-    nxtwave: "AI-powered + Human panels",
-    others: "Limited or no mock interviews",
+    feature: "Placements Opportunities",
+    intensive: "Unlimited from a pool of 3000+ companies",
+    others: "Limited (15-20)",
+    intensiveCheck: true,
+    othersCheck: false,
   },
   {
-    feature: "Learning Style",
-    nxtwave: "Self-paced + Live sessions",
-    others: "Fixed schedule only",
+    feature: "Institute Recognised by",
+    intensive: "NSDC + NASSCOM",
+    others: "No recognition",
+    intensiveCheck: true,
+    othersCheck: false,
+    intensiveLogos: true,
   },
   {
-    feature: "Certification",
-    nxtwave: "NSDC recognized IRC",
-    others: "Course completion certificate",
+    feature: "Projects",
+    intensive: "10+ Real-time Projects that makes your resume strong",
+    others: "~1-2 real time projects",
+    intensiveCheck: true,
+    othersCheck: false,
   },
   {
-    feature: "Job Guarantee",
-    nxtwave: "Pay after placement option available",
-    others: "No refund policy",
+    feature: "Access to Labs",
+    intensive: "24×7 Online State-of-the-art Labs. No installation/setup needed.",
+    others: "Only 2 hours/day",
+    intensiveCheck: true,
+    othersCheck: false,
+  },
+  {
+    feature: "AI Mock Interviews",
+    intensive: "with NxtMock",
+    others: "",
+    intensiveCheck: true,
+    othersCheck: false,
+  },
+  {
+    feature: "Expert Mock Interviews",
+    intensive: "with Dedicated Tech & HR Panels",
+    others: "",
+    intensiveCheck: true,
+    othersCheck: false,
+  },
+  {
+    feature: "Seniors' Interview Experiences",
+    intensive: "Access to 300+ Sessions",
+    others: "",
+    intensiveCheck: true,
+    othersCheck: false,
+  },
+  {
+    feature: "Scheduling Interviews",
+    intensive: "",
+    others: "",
+    intensiveCheck: true,
+    othersCheck: false,
+  },
+  {
+    feature: "Salary Negotiation with Companies",
+    intensive: "For higher salaries",
+    others: "",
+    intensiveCheck: true,
+    othersCheck: false,
   },
 ];
 
 export default function WhyJoinSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <Badge className="bg-orange-100 text-orange-700 mb-4">
-            <Zap size={14} className="mr-1" />
-            Why Choose Us
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Join NxtWave Intensive?
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            See how we compare to other institutes and training programs
-          </p>
-        </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e293b] mb-12"
+        >
+          Why Join Intensive?
+        </motion.h2>
 
         {/* Comparison Table */}
-        <div className="max-w-4xl mx-auto">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-gray-100">
-                  <th className="py-4 px-4 text-left text-sm font-semibold text-gray-600">
-                    Feature
-                  </th>
-                  <th className="py-4 px-4 text-left text-sm font-semibold text-[#007BFF]">
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg">🚀</span>
-                      NxtWave Intensive
-                    </div>
-                  </th>
-                  <th className="py-4 px-4 text-left text-sm font-semibold text-gray-400">
-                    Other Institutes
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, index) => (
-                  <tr
-                    key={index}
-                    className="border-b border-gray-50 hover:bg-gray-50 transition-colors"
-                  >
-                    <td className="py-4 px-4">
-                      <span className="font-medium text-gray-900">
-                        {row.feature}
-                      </span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#28A745] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-700">
-                          {row.nxtwave}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="flex items-start gap-2">
-                        <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-500">
-                          {row.others}
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="overflow-x-auto"
+        >
+          <table className="w-full min-w-[800px]">
+            {/* Table Header */}
+            <thead>
+              <tr>
+                <th className="p-4 text-left w-1/4"></th>
+                <th className="p-4 text-center w-[37.5%]">
+                  <div className="bg-gradient-to-r from-[#7c3aed] to-[#6366f1] text-white rounded-t-xl py-4 px-6">
+                    <span className="text-xl font-bold">Intensive 3.0</span>
+                  </div>
+                </th>
+                <th className="p-4 text-center w-[37.5%]">
+                  <div className="bg-slate-100 text-[#1e293b] rounded-t-xl py-4 px-6">
+                    <span className="text-xl font-bold">Other Coaching Institutes</span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
 
-        {/* Mobile Card View */}
-        <div className="md:hidden mt-8 space-y-4">
-          {comparisonData.slice(0, 4).map((row, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl border border-gray-100 p-4"
+            {/* Table Body */}
+            <tbody>
+              {comparisonData.map((row, index) => (
+                <motion.tr
+                  key={row.feature}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className={`border-b border-gray-100 ${
+                    index % 2 === 0 ? "bg-white" : "bg-slate-50/50"
+                  }`}
+                >
+                  {/* Feature Name */}
+                  <td className="p-4 border-l-4 border-[#2563eb]">
+                    <span className="font-semibold text-[#1e293b]">
+                      {row.feature}
+                    </span>
+                  </td>
+
+                  {/* Intensive Column */}
+                  <td className="p-4 text-center border-x border-purple-100 bg-purple-50/30">
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      {row.intensiveLogos ? (
+                        <div className="flex items-center gap-4">
+                          <span className="text-xs font-bold text-blue-600">NSDC</span>
+                          <span className="text-xs font-bold text-gray-600">NASSCOM</span>
+                        </div>
+                      ) : row.intensive ? (
+                        <span className="text-gray-600 text-sm">{row.intensive}</span>
+                      ) : null}
+                      {row.intensiveCheck && (
+                        <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                          <Check className="w-5 h-5 text-green-500" />
+                        </div>
+                      )}
+                    </div>
+                  </td>
+
+                  {/* Others Column */}
+                  <td className="p-4 text-center border-r border-gray-100">
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      {row.others && (
+                        <span className="text-gray-500 text-sm">{row.others}</span>
+                      )}
+                      {!row.othersCheck && (
+                        <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                          <X className="w-5 h-5 text-red-500" />
+                        </div>
+                      )}
+                    </div>
+                  </td>
+                </motion.tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-12"
+        >
+          {/* Batch Info */}
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-3 h-3 rounded-full bg-[#2563eb]" />
+            <span className="text-gray-700">Batch starts today</span>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="#pricing"
+              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3.5 rounded-lg transition-colors"
             >
-              <h4 className="font-semibold text-gray-900 mb-3">{row.feature}</h4>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2 p-2 bg-green-50 rounded-lg">
-                  <CheckCircle className="w-4 h-4 text-[#28A745] flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs text-green-700 font-medium mb-1">
-                      NxtWave
-                    </p>
-                    <p className="text-sm text-gray-700">{row.nxtwave}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 p-2 bg-gray-50 rounded-lg">
-                  <X className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs text-gray-500 font-medium mb-1">
-                      Others
-                    </p>
-                    <p className="text-sm text-gray-500">{row.others}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              Enroll Now
+            </Link>
+            <Link
+              href="#demo-form"
+              className="border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-semibold px-10 py-3.5 rounded-lg transition-colors"
+            >
+              Book a Free Demo
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

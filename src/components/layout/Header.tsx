@@ -17,28 +17,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      {/* Announcement Bar */}
-      <div className="bg-[#1e293b] text-white py-2 px-4">
-        <div className="container mx-auto flex items-center justify-center gap-2 text-sm">
-          <span className="text-xl">🎆</span>
-          <span>
-            <span className="font-semibold">NxtWave Intensive Offline Center</span> is starting in{" "}
-            <span className="font-semibold">Hyderabad</span>.
-          </span>
-          <Link
-            href="#"
-            className="inline-flex items-center gap-1 font-semibold text-white hover:underline"
-          >
-            Check It Out
-            <ArrowRight size={14} />
-          </Link>
-          <span className="text-xl">🎆</span>
-        </div>
-      </div>
-
       {/* Main Header */}
       <nav className="border-b border-gray-100">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex flex-col leading-tight">
@@ -106,6 +87,25 @@ export default function Header() {
           )}
         </div>
       </nav>
+      {/* Announcement Bar */}
+      <div className="bg-[#1e293b] text-white py-4 px-4">
+        <div className="container mx-auto flex items-center justify-center gap-2 text-sm">
+          <span className="text-xl">🎆</span>
+          <span>
+            <span className="font-semibold">NxtWave Intensive Offline Center</span> is starting in{" "}
+            <span className="font-semibold">Hyderabad</span>.
+          </span>
+          <Link
+            href="#"
+            className="inline-flex items-center gap-1 font-semibold text-white hover:underline"
+          >
+            Check It Out
+            <ArrowRight size={14} />
+          </Link>
+          <span className="text-xl">🎆</span>
+        </div>
+      </div>
+
     </header>
   );
 }

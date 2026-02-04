@@ -1,122 +1,130 @@
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Newspaper, ExternalLink, Calendar } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const mediaArticles = [
   {
     id: 1,
-    title: "NxtWave recognized as Technology Pioneer by World Economic Forum",
-    source: "Economic Times",
-    date: "Jan 2024",
-    excerpt:
-      "NxtWave has been recognized as a Technology Pioneer for 2024 by the World Economic Forum...",
+    title: "Over 2000 Companies Hire NxtWave Learners, Addressing the Talent...",
+    source: "INDIA TODAY",
+    date: "08 Oct 2024",
     link: "#",
-    imageUrl: "https://via.placeholder.com/400x200/007BFF/ffffff?text=WEF+Recognition",
+    thumbnail: "bg-[#8b0000]", // Dark red for India Today style
+    imageContent: "2000+ COMPANIES STRONG!",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/India_Today_logo.svg/1200px-India_Today_logo.svg.png",
   },
   {
     id: 2,
-    title: "How NxtWave is Transforming Tech Education in India",
-    source: "Forbes India",
-    date: "Dec 2023",
-    excerpt:
-      "The Hyderabad-based edtech startup is making waves in the industry with its unique approach...",
+    title: "NxtWave and NSDC launch SkillUp India 4.0, aims to empower over...",
+    source: "Hindustan Times",
+    date: "04 Sep 2024",
     link: "#",
-    imageUrl: "https://via.placeholder.com/400x200/28A745/ffffff?text=Forbes+Feature",
+    thumbnail: "bg-[#e2e8f0]", // Light gray for photo placeholder
+    imageContent: "EVENT PHOTO",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Hindustan_Times_Logo.svg/1200px-Hindustan_Times_Logo.svg.png",
   },
   {
     id: 3,
-    title: "NxtWave Wins Best Tech Skilling EdTech Company Award",
-    source: "Times Business Awards",
-    date: "Nov 2023",
-    excerpt:
-      "NxtWave received the prestigious award for its contribution to tech skill development...",
+    title: "NSDC, NxtWave join hands to upskill 3 million students",
+    source: "CNBC TV18",
+    date: "03 Sep 2024",
     link: "#",
-    imageUrl: "https://via.placeholder.com/400x200/764ba2/ffffff?text=Times+Award",
-  },
-  {
-    id: 4,
-    title: "2000+ Companies Now Hiring from NxtWave Platform",
-    source: "Business Standard",
-    date: "Oct 2023",
-    excerpt:
-      "The placement numbers continue to grow as more companies recognize the quality of NxtWave graduates...",
-    link: "#",
-    imageUrl: "https://via.placeholder.com/400x200/ff6b35/ffffff?text=Business+News",
+    thumbnail: "bg-[#e2e8f0]", // Light gray for photo placeholder
+    imageContent: "EVENT PHOTO",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/CNBC_TV18_logo.svg/1200px-CNBC_TV18_logo.svg.png",
   },
 ];
 
 export default function MediaSection() {
-  return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <Badge className="bg-purple-100 text-purple-700 mb-4">
-            <Newspaper size={14} className="mr-1" />
-            Media Coverage
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            NxtWave in the Media
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            See what leading publications are saying about NxtWave
-          </p>
-        </div>
+  const [activeIndex, setActiveIndex] = useState(0);
 
-        {/* Articles Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {mediaArticles.map((article) => (
-            <Card
+  return (
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Header */}
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e293b] mb-16"
+        >
+          NxtWave in the media
+        </motion.h2>
+
+        {/* Media Grid / Carousel */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {mediaArticles.map((article, index) => (
+            <motion.div
               key={article.id}
-              className="overflow-hidden hover:shadow-card-hover transition-all duration-300 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 p-6"
             >
-              {/* Image */}
-              <div className="relative h-32 bg-gradient-to-br from-[#007BFF]/20 to-purple-100 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-white font-bold">
-                  <Newspaper className="w-12 h-12 text-white/50" />
+              {/* Card Top: Logo & Date */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="h-8 w-24 relative grayscale opacity-80">
+                   {/* Fallback to source text if image fails or needs better styling */}
+                   <span className="font-black text-xs tracking-tight text-slate-900">{article.source}</span>
                 </div>
+                <span className="text-xs text-slate-500 font-medium">{article.date}</span>
               </div>
 
-              {/* Content */}
-              <div className="p-5">
-                {/* Source & Date */}
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-[#007BFF]">
-                    {article.source}
-                  </span>
-                  <span className="text-gray-300">•</span>
-                  <span className="text-xs text-gray-500 flex items-center gap-1">
-                    <Calendar size={10} />
-                    {article.date}
-                  </span>
-                </div>
+              {/* Card Image Thumbnail */}
+              <div className={`aspect-[16/9] rounded-2xl mb-6 overflow-hidden relative ${article.thumbnail} flex items-center justify-center`}>
+                {index === 0 ? (
+                  <div className="bg-gradient-to-br from-[#8b0000] to-[#450a0a] w-full h-full p-4 flex flex-col justify-center">
+                    <div className="bg-yellow-400 text-[#8b0000] font-black text-3xl px-2 py-1 rotate-[-2deg] mb-2 w-fit">2000+</div>
+                    <div className="text-white font-bold text-lg leading-tight">COMPANIES STRONG!</div>
+                  </div>
+                ) : (
+                  <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400 text-xs font-bold uppercase tracking-widest">
+                    [ EVENT PHOTO ]
+                  </div>
+                )}
+              </div>
 
-                {/* Title */}
-                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#007BFF] transition-colors">
+              {/* Card Content */}
+              <div className="flex flex-col flex-1">
+                <h3 className="text-[#334155] font-semibold text-lg leading-snug mb-8 line-clamp-2">
                   {article.title}
                 </h3>
 
-                {/* Excerpt */}
-                <p className="text-sm text-gray-600 line-clamp-2 mb-4">
-                  {article.excerpt}
-                </p>
-
-                {/* Read More */}
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-[#007BFF] font-medium"
-                  asChild
-                >
-                  <Link href={article.link} target="_blank">
+                <div className="mt-auto flex items-center justify-between">
+                  <a href={article.link} className="text-[#3b82f6] font-bold text-sm hover:underline flex items-center gap-2">
                     Read Article
-                    <ExternalLink size={12} className="ml-1" />
-                  </Link>
-                </Button>
+                  </a>
+                  <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-[#3b82f6] transition-colors">
+                    <ArrowRight className="w-4 h-4 text-[#3b82f6]" />
+                  </div>
+                </div>
               </div>
-            </Card>
+            </motion.div>
           ))}
+        </div>
+
+        {/* Carousel Controls */}
+        <div className="flex items-center justify-center gap-6 mt-8">
+           <button className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-600 hover:border-slate-400 transition-all">
+             <ChevronLeft className="w-6 h-6" />
+           </button>
+           
+           <div className="flex gap-2">
+             {[...Array(6)].map((_, i) => (
+               <div 
+                 key={i} 
+                 className={`h-2 rounded-full transition-all duration-300 ${i === 0 ? 'w-8 bg-slate-500' : 'w-2 bg-slate-300'}`} 
+               />
+             ))}
+           </div>
+
+           <button className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-600 hover:border-slate-400 transition-all">
+             <ChevronRight className="w-6 h-6" />
+           </button>
         </div>
       </div>
     </section>

@@ -1,6 +1,9 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import ProgramOverview from "@/components/sections/ProgramOverview";
+import EligibilitySection from "@/components/sections/EligibilitySection";
+import LearnerExperiencesSection from "@/components/sections/LearnerExperiencesSection";
 import FeaturesStrip from "@/components/sections/FeaturesStrip";
 import UpgradesSection from "@/components/sections/UpgradesSection";
 import TrainersSection from "@/components/sections/TrainersSection";
@@ -8,6 +11,8 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import GettingStarted from "@/components/sections/GettingStarted";
 import DoubtsSection from "@/components/sections/DoubtsSection";
 import TrustedBySection from "@/components/sections/TrustedBySection";
+import HiringCompaniesSection from "@/components/sections/HiringCompaniesSection";
+import WhyCompaniesPreferSection from "@/components/sections/WhyCompaniesPreferSection";
 import CertificationSection from "@/components/sections/CertificationSection";
 import WhyJoinSection from "@/components/sections/WhyJoinSection";
 import RecognitionSection from "@/components/sections/RecognitionSection";
@@ -27,40 +32,55 @@ export default function Home() {
         {/* 2. Features Strip */}
         <FeaturesStrip />
 
-        {/* 3. Upgrades Section */}
+        {/* 3. Program Overview */}
+        <ProgramOverview />
+
+        {/* 4. Eligibility */}
+        <EligibilitySection />
+
+        {/* 5. Learner Experiences (Videos) */}
+        <LearnerExperiencesSection />
+
+        {/* 6. Upgrades Section */}
         <UpgradesSection />
 
-        {/* 4. Trainers Section */}
+        {/* 7. Trainers Section */}
         <TrainersSection />
 
-        {/* 5. Testimonials */}
+        {/* 8. Testimonials */}
         <TestimonialsSection />
 
-        {/* 6. Getting Started (3 Steps) */}
+        {/* 9. Getting Started (3 Steps) */}
         <GettingStarted />
 
-        {/* 7. Doubts Section */}
+        {/* 10. Doubts Section */}
         <DoubtsSection />
 
-        {/* 8. Trusted By / Companies */}
+        {/* 11. Trusted By - Placed Candidates */}
         <TrustedBySection />
 
-        {/* 9. Certification (IRC) */}
+        {/* 12. Hiring Companies - 2000+ Companies */}
+        <HiringCompaniesSection />
+
+        {/* 13. Why Top Companies Prefer NxtWave Students */}
+        <WhyCompaniesPreferSection />
+
+        {/* 14. Certification (IRC) */}
         <CertificationSection />
 
-        {/* 10. Why Join Section */}
+        {/* 15. Why Join Section */}
         <WhyJoinSection />
 
-        {/* 11. Recognition */}
+        {/* 16. Recognition */}
         <RecognitionSection />
 
-        {/* 12. Payment Plans */}
+        {/* 17. Payment Plans */}
         <PaymentPlans />
 
-        {/* 13. FAQ */}
+        {/* 18. FAQ */}
         <FAQSection />
 
-        {/* 14. Media Section */}
+        {/* 19. Media Section */}
         <MediaSection />
       </main>
       <Footer />
