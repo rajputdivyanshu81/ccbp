@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NxtWave Intensive Clone 🚀
 
-## Getting Started
+A high-fidelity, pixel-perfect clone of the [NxtWave Intensive](https://www.joined.nxtwave.tech/intensive) landing page, built with modern web technologies.
 
-First, run the development server:
+![NxtWave Intensive Banner](https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/690d6fab0cae49e13e2d5ef9_Group%201000005139.png)
+
+## 📋 Overview
+
+This project is a precision-focused recreation of the NxtWave Intensive marketing site. It aims to capture the exact look, feel, and interactivity of the original platform, highlighting modern frontend development practices.
+
+The application features complex layouts, custom animations, responsive design patterns, and interactive elements.
+
+## ✨ Key Features
+
+- **High-Fidelity UI**: Pixel-perfect implementation of sections like Hero, Trusted By, Doubts, and Footer to match specific design references.
+- **Custom Animations**:
+  - Hand-drawn "scribble" SVG animations.
+  - Smooth scrolling marquees for "Trusted By" companies.
+  - Reveal animations using **Framer Motion**.
+- **Responsive Design**: Fully optimized for Mobile, Tablet, and Desktop viewports.
+- **Interactive Forms**: Demo booking form with validation using **React Hook Form** and **Zod**.
+- **Modern Styling**: Built with **Tailwind CSS v4** for a utility-first, maintainable styling architecture.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Form Handling**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally.
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd nxtwave-intensive
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open in Browser**
+   Visit [http://localhost:3000](http://localhost:3000) to view the application.
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+├── app/                  # Next.js App Router pages and layouts
+│   ├── globals.css       # Global styles and Tailwind directives
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Main landing page
+├── components/
+│   ├── layout/           # Global layout components (Header, Footer)
+│   ├── sections/         # Individual landing page sections (Hero, TrustedBy, etc.)
+│   ├── shared/           # Reusable UI components (Buttons, Cards, ChatWidget)
+│   └── ui/               # shadcn/ui or base components
+└── lib/
+    ├── data/             # Static data files (testimonials, faqs, etc.)
+    └── utils.ts          # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Key Sections Implemented
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Hero Section**: Dynamic carousel with "scribble" animations.
+- **Trusted By Section**: Dual-column stats and auto-scrolling candidate marquee.
+- **Doubts Clarification**: Interactive layout with custom illustrations and typography.
+- **Course Tracks**: Tabbed or grid-based overview of available programs.
+- **Testimonials**: Grid layout with success stories and video thumbnails.
+- **Payment Plans**: Pricing cards with detailed benefits.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📝 License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for educational and portfolio purposes. All original branding, logos, and content belong to [NxtWave](https://www.nxtwave.tech/).
