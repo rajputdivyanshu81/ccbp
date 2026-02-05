@@ -51,13 +51,11 @@ export default function Footer() {
           {/* Logo & Reach Us */}
           <div className="space-y-8">
             <Link href="/" className="inline-block">
-              <div className="flex flex-col">
-                <span className="text-3xl font-black text-white tracking-widest leading-none">NXT</span>
-                <span className="text-3xl font-black text-white tracking-widest leading-none flex items-center">
-                  WAVE
-                  <span className="text-[10px] font-bold align-top ml-1">TM</span>
-                </span>
-              </div>
+              <img 
+                src="https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/690d6fab0cae49e13e2d5ef9_Group%201000005139.png" 
+                alt="NxtWave Intensive" 
+                className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
 
             <div className="space-y-4">
@@ -162,8 +160,35 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Socials & Legal Links - Moved Here */}
+        <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col lg:flex-row justify-between gap-8">
+          {/* Socials */}
+          <div className="space-y-8 lg:w-1/4">
+            <div className="flex items-center gap-6">
+              <Link href="#" className="hover:text-white transition-colors"><Facebook size={20} /></Link>
+              <Link href="#" className="hover:text-white transition-colors"><Instagram size={20} /></Link>
+              <Link href="#" className="hover:text-white transition-colors"><Twitter size={20} /></Link>
+              <Link href="#" className="hover:text-white transition-colors"><Linkedin size={20} /></Link>
+              <Link href="#" className="hover:text-white transition-colors"><Youtube size={20} /></Link>
+            </div>
+          </div>
+
+          {/* Legal Links Column */}
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8">
+             {legalLinks.map((link) => (
+                <Link 
+                  key={link.label} 
+                  href={link.href}
+                  className="text-sm text-slate-500 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+             ))}
+          </div>
+        </div>
+
         {/* Course Tracks Section */}
-        <div className="mt-16 pt-12 border-t border-slate-800 space-y-10 mb-16">
+        <div className="mt-16 pt-12 space-y-10 mb-16">
           <div className="space-y-1">
             <h3 className="text-white font-bold text-lg leading-tight">Course Tracks</h3>
             <p className="text-sm font-semibold text-slate-400">Software Training Institute</p>
@@ -228,33 +253,6 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col lg:flex-row justify-between gap-8">
-          {/* Socials & Legal Column 1 */}
-          <div className="space-y-8 lg:w-1/4">
-            <div className="flex items-center gap-6">
-              <Link href="#" className="hover:text-white transition-colors"><Facebook size={20} /></Link>
-              <Link href="#" className="hover:text-white transition-colors"><Instagram size={20} /></Link>
-              <Link href="#" className="hover:text-white transition-colors"><Twitter size={20} /></Link>
-              <Link href="#" className="hover:text-white transition-colors"><Linkedin size={20} /></Link>
-              <Link href="#" className="hover:text-white transition-colors"><Youtube size={20} /></Link>
-            </div>
-          </div>
-
-          {/* Legal Links Column */}
-          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8">
-             {legalLinks.map((link) => (
-                <Link 
-                  key={link.label} 
-                  href={link.href}
-                  className="text-sm text-slate-500 hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-             ))}
           </div>
         </div>
       </div>

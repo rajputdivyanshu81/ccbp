@@ -129,47 +129,36 @@ export default function GettingStarted() {
                   Book a Free Demo
                 </Link>
               </div>
-
-              {/* Curved Connector Line - Goes down then curves up/outward to the right */}
-              <div className="hidden lg:block relative mt-8">
-                <svg
-                  viewBox="0 0 120 200"
-                  className="w-32 h-48"
-                  fill="none"
-                >
-                  {/* Background path (gray) - goes down then curves up to the right */}
-                  <path
-                    d="M 10 0 L 10 120 Q 10 180 60 180 Q 110 180 120 140"
-                    stroke="#e5e7eb"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  {/* Animated progress path (blue) */}
-                  <motion.path
-                    d="M 10 0 L 10 120 Q 10 180 60 180 Q 110 180 120 140"
-                    stroke="#2563eb"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeLinecap="round"
-                    style={{
-                      pathLength: scrollYProgress,
-                    }}
-                  />
-                </svg>
-              </div>
             </motion.div>
           </div>
 
           {/* Right Side - Scrolling Steps with Connected Line */}
           <div className="py-16 lg:py-24 relative">
-            {/* Vertical Line Connecting Steps */}
-            <div className="absolute left-5 top-24 bottom-24 w-0.5 bg-gray-200 hidden lg:block">
-              {/* Animated Progress Line */}
-              <motion.div
-                className="absolute left-0 top-0 w-full bg-[#2563eb] origin-top"
-                style={{ scaleY: lineScaleY }}
-              />
+            {/* Custom Curved Connector Line - Straight L-Shape Left */}
+            <div className="absolute left-[-50px] top-24 bottom-12 w-[100px] hidden lg:block">
+              <svg 
+                className="w-full h-full" 
+                viewBox="0 0 100 1000" 
+                preserveAspectRatio="none"
+              >
+                {/* Background path (gray) */}
+                <path 
+                  d="M 70 0 L 70 980 L 0 980" 
+                  stroke="#e2e8f0" 
+                  strokeWidth="3" 
+                  fill="none" 
+                  strokeLinecap="round" 
+                />
+                {/* Animated progress path (blue) */}
+                <motion.path 
+                  d="M 70 0 L 70 980 L 0 980" 
+                  stroke="#2563eb" 
+                  strokeWidth="3" 
+                  fill="none" 
+                  strokeLinecap="round"
+                  style={{ pathLength: scrollYProgress }}
+                />
+              </svg>
             </div>
 
             <div className="space-y-20 lg:space-y-32">

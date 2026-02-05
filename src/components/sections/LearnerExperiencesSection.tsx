@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, Share2, Clock } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 const videos = [
   {
@@ -178,27 +179,29 @@ export default function LearnerExperiencesSection() {
           transition={{ delay: 0.4 }}
           className="mt-16 text-center"
         >
-          {/* Batch Info */}
-          <div className="flex items-center justify-center gap-2 mb-6 text-sm md:text-base">
-            <div className="w-3 h-3 rounded-full bg-[#2563eb]" />
-            <span className="text-gray-700">Batch starts today</span>
-          </div>
+          {/* Batch Info
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#2563eb]" />
+            </div>
+            <span className="text-[#334155] font-medium text-lg">Batch starts today</span>
+          </div> */}
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
+            <Link
               href="#pricing"
-              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 md:px-10 py-3 md:py-3.5 rounded-lg transition-colors shadow-sm text-sm md:text-base"
+              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold px-10 py-4 rounded-2xl transition-all shadow-md active:scale-95"
             >
               Enroll Now
-            </a>
-            <a
+            </Link>
+            <Link
               href="#demo-form"
-              className="border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-semibold px-8 md:px-10 py-3 md:py-3.5 rounded-lg transition-colors shadow-sm text-sm md:text-base"
+              className="border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-bold px-10 py-4 rounded-2xl transition-all active:scale-95"
             >
               Book a Free Demo
-            </a>
-          </div>
+            </Link>
+          </div> */}
         </motion.div>
       </div>
     </section>

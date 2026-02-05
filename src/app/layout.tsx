@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Bree_Serif, Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const breeSerif = Bree_Serif({
-  weight: "400",
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-bree-serif",
-  display: "swap",
-});
-
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700", "900"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -56,8 +48,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Font Awesome CDN */}
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossOrigin="anonymous" 
+          referrerPolicy="no-referrer" 
+        />
+        {/* Satoshi Variable Font */}
+        <link 
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" 
+          rel="stylesheet" 
+        />
+      </head>
       <body
-        className={`${breeSerif.variable} ${roboto.variable} antialiased font-sans`}
+        className={`${inter.variable} antialiased font-sans`}
       >
         {children}
       </body>

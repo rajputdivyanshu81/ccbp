@@ -2,18 +2,18 @@
 
 export default function ChatWidget() {
   return (
-    <div className="fixed bottom-6 right-6 z-[60] group">
+    <div className="fixed bottom-9 right-8 z-[70] group">
       <a
         href="https://wa.me/919390111761"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 bg-[#22c55e] hover:bg-[#1eb851] text-white px-5 py-3 rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95"
+        className="flex items-center gap-2 bg-[#22c55e] hover:bg-[#1eb851] text-white px-6 py-4 rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95"
       >
         <span className="text-sm font-bold tracking-wide">Chat with us</span>
         <svg
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
+          viewBox="0 0 26 26"
+          width="35"
+          height="35"
           fill="currentColor"
           className="flex-shrink-0"
         >

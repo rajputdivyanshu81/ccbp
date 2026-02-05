@@ -6,78 +6,83 @@ export default function TrainersSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1e293b]">
             Your{" "}
-            <span
-              style={{
-                borderBottom: "3px solid #a855f7",
-                paddingBottom: "4px",
-              }}
-            >
+            <span className="relative inline-block">
               Trainers
+              <svg 
+                className="absolute -bottom-2 left-0 w-full h-3 text-[#a855f7]/60" 
+                viewBox="0 0 300 20" 
+                fill="none" 
+                preserveAspectRatio="none"
+              >
+                <path d="M5 15C50 12 150 5 295 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+              </svg>
             </span>{" "}
             are Alumni of
           </h2>
         </div>
 
         {/* Logos Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16 max-w-5xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 lg:gap-12 max-w-7xl mx-auto px-4">
           {/* Stanford */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#8c1515] rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">S</span>
-            </div>
-            <div className="text-sm">
-              <span className="font-bold text-[#8c1515]">Stanford</span>
-              <br />
-              <span className="text-gray-600 text-xs">University</span>
-            </div>
+          <div className="h-12 md:h-18 w-auto flex items-center flex-shrink-0">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Stanford_S_logo.svg/1200px-Stanford_S_logo.svg.png" 
+              alt="Stanford University" 
+              className="h-full w-auto object-contain"
+            />
           </div>
 
           {/* Google */}
-          <div className="text-2xl font-bold">
-            <span className="text-[#4285f4]">G</span>
-            <span className="text-[#ea4335]">o</span>
-            <span className="text-[#fbbc05]">o</span>
-            <span className="text-[#4285f4]">g</span>
-            <span className="text-[#34a853]">l</span>
-            <span className="text-[#ea4335]">e</span>
+          <div className="h-8 md:h-10 w-auto flex items-center">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" 
+              alt="Google" 
+              className="h-full w-auto object-contain"
+            />
           </div>
 
           {/* IIT Bombay */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full border-2 border-gray-400 flex items-center justify-center">
-              <span className="text-xs">🏛️</span>
-            </div>
-            <span className="font-bold text-gray-700">IIT Bombay</span>
+          <div className="h-10 md:h-12 w-auto flex items-center gap-2">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Indian_Institute_of_Technology_Bombay_Logo.svg/1200px-Indian_Institute_of_Technology_Bombay_Logo.svg.png" 
+              alt="IIT Bombay" 
+              className="h-full w-auto object-contain grayscale opacity-80"
+            />
+            <span className="font-bold text-gray-700 text-sm md:text-base">IIT Bombay</span>
           </div>
 
           {/* Amazon */}
-          <div className="text-2xl font-bold text-[#1e293b]">
-            amazon
-            <div className="h-1 w-16 bg-[#ff9900] rounded-full mt-0.5 ml-auto" />
+          <div className="h-8 md:h-10 w-auto flex items-center">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" 
+              alt="Amazon" 
+              className="h-full w-auto object-contain"
+            />
           </div>
 
           {/* IIT Delhi */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full border-2 border-blue-500 flex items-center justify-center bg-blue-50">
-              <span className="text-xs">🏛️</span>
-            </div>
-            <span className="font-bold text-gray-700">IIT Delhi</span>
+          <div className="h-10 md:h-12 w-auto flex items-center gap-2">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1200px-Indian_Institute_of_Technology_Delhi_Logo.svg.png" 
+              alt="IIT Delhi" 
+              className="h-full w-auto object-contain grayscale opacity-80"
+            />
+            <span className="font-bold text-gray-700 text-sm md:text-base">IIT Delhi</span>
           </div>
 
           {/* Microsoft */}
-          <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 gap-0.5 w-5 h-5">
-              <div className="bg-[#f25022]" />
-              <div className="bg-[#7fba00]" />
-              <div className="bg-[#00a4ef]" />
-              <div className="bg-[#ffb900]" />
-            </div>
-            <span className="font-semibold text-gray-600">Microsoft</span>
+          <div className="h-8 md:h-10 w-auto flex items-center gap-2 flex-shrink-0">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" 
+              alt="Microsoft" 
+              className="h-full w-auto object-contain"
+            />
+            <span className="font-semibold text-gray-600 whitespace-nowrap">Microsoft</span>
           </div>
         </div>
 
         {/* And many more */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-12">
           <span className="text-gray-500 text-sm">and many more...</span>
         </div>
       </div>

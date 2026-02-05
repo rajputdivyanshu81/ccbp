@@ -71,21 +71,28 @@ export default function UpgradesSection() {
     <section id="curriculum" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-block bg-[#f97316] text-white text-xs font-bold px-2.5 py-1 rounded mb-4">
-            NEW
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e293b] mb-2">
+        <div className="relative max-w-4xl mx-auto text-center mb-12">
+          {/* NEW Badge - Positioned to the side */}
+          <div className="absolute left-0 -top-4 md:left-[-30px] lg:left-[-60px]">
+            <span className="bg-[#f97316] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+              NEW
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-[#1e293b] leading-tight mb-2">
             The All New Intensive 3.0 Upgrades to
           </h2>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e293b]">
-            <span
-              style={{
-                borderBottom: "3px solid #a855f7",
-                paddingBottom: "4px",
-              }}
-            >
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-[#1e293b] leading-tight">
+            <span className="relative">
               Supercharge Your Career
+              <svg 
+                className="absolute -bottom-3 left-0 w-full h-3 text-[#a855f7]/60" 
+                viewBox="0 0 300 20" 
+                fill="none" 
+                preserveAspectRatio="none"
+              >
+                <path d="M5 15C50 12 150 5 295 15" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+              </svg>
             </span>
           </h2>
         </div>

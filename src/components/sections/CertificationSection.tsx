@@ -82,22 +82,24 @@ export default function CertificationSection() {
             </div>
 
             {/* Batch Info */}
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-[#2563eb]" />
-              <span className="text-gray-700">Batch starts today</span>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#2563eb]" />
+              </div>
+              <span className="text-[#334155] font-medium text-lg">Batch starts today</span>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <Link
                 href="#pricing"
-                className="bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold px-10 py-4 rounded-2xl transition-all shadow-md active:scale-95"
               >
                 Enroll Now
               </Link>
               <Link
                 href="#demo-form"
-                className="border-2 border-[#22c55e] text-[#22c55e] hover:bg-[#22c55e] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                className="border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-bold px-10 py-4 rounded-2xl transition-all active:scale-95"
               >
                 Book a Free Demo
               </Link>
@@ -112,115 +114,21 @@ export default function CertificationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            {/* Certificate Card */}
-            <div className="relative bg-gradient-to-br from-[#0f172a] via-[#1e3a5f] to-[#0f172a] rounded-2xl p-8 shadow-2xl overflow-hidden">
-              {/* Decorative diagonal lines */}
-              <div className="absolute inset-0 opacity-10">
-                {[...Array(20)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute h-px bg-white"
-                    style={{
-                      width: '200%',
-                      top: `${i * 20}px`,
-                      left: '-50%',
-                      transform: 'rotate(-15deg)',
-                    }}
-                  />
-                ))}
-              </div>
+            {/* Official Certificate Image */}
+            <motion.div 
+              className="relative group"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                src="https://nxtwave.imgix.net/ccbp-website/nxtwave-intensive-2.0/certificate.png" 
+                alt="NxtWave Intensive Certification" 
+                className="w-full h-auto rounded-[32px] shadow-2xl relative z-10"
+              />
+              {/* Deep shadow glow */}
+              <div className="absolute -inset-4 bg-blue-600/10 blur-2xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.div>
 
-              {/* Certificate Content */}
-              <div className="relative z-10">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-[#2563eb] text-white text-xs font-bold px-3 py-1 rounded">
-                      ⚡INTENSIVE
-                    </div>
-                    <span className="text-white/60 text-xs uppercase tracking-wider">
-                      Industry-Ready
-                    </span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-white/60 text-[10px]">NXT</div>
-                    <div className="text-white/40 text-[8px]">WAVE</div>
-                  </div>
-                </div>
-
-                {/* Certificate Title */}
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  CERTIFICATE
-                </h3>
-                <p className="text-white/60 text-sm mb-6">OF SPECIALIZATION</p>
-
-                {/* Verified Badge */}
-                <div className="absolute top-8 right-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center">
-                      <span className="text-[10px] font-bold text-yellow-900 text-center leading-tight">
-                        IR<br/>VERIFIED
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Name Section */}
-                <div className="bg-white rounded-xl p-6 mb-4">
-                  <p className="text-gray-500 text-sm mb-1">Congratulations</p>
-                  <p className="text-2xl font-bold text-[#1e293b] mb-3 font-serif italic">
-                    Your Name
-                  </p>
-                  <p className="text-gray-600 text-sm mb-4">
-                    You have successfully completed the{" "}
-                    <span className="font-semibold">
-                      Full Stack Development with MERN Specialization.
-                    </span>
-                  </p>
-                  <p className="text-gray-500 text-xs mb-4">
-                    This certificate is awarded after completing
-                  </p>
-
-                  {/* Stats */}
-                  <div className="flex gap-8 mb-4">
-                    <div className="text-center">
-                      <p className="text-2xl font-bold text-[#1e293b]">24 +</p>
-                      <p className="text-[10px] text-gray-500">
-                        Rigorous Assignments and Projects
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-2xl font-bold text-[#1e293b]">600 +</p>
-                      <p className="text-[10px] text-gray-500">Hours of Coding</p>
-                    </div>
-                  </div>
-
-                  {/* Tech Icons */}
-                  <div className="flex gap-2 mb-4">
-                    {["🔵", "🔴", "🟡", "🟢", "🟣", "⚫", "🔶", "🟤"].map((icon, i) => (
-                      <span key={i} className="text-lg">{icon}</span>
-                    ))}
-                  </div>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div>
-                      <p className="text-[10px] text-gray-400">Certificate ID:</p>
-                      <p className="text-[10px] text-gray-400">Date of completion:</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs font-bold text-gray-600">NASSCOM</span>
-                      <span className="text-xs text-gray-400">Google</span>
-                      <span className="text-xs text-gray-400">meta</span>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-serif italic text-gray-600">Rahul A</p>
-                      <p className="text-[10px] text-gray-400">CEO, NxtWave</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Shadow effect */}
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-gradient-to-b from-black/20 to-transparent blur-lg rounded-full" />

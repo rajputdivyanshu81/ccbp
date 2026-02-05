@@ -218,22 +218,24 @@ export default function WhyCompaniesPreferSection() {
           className="mt-12"
         >
           {/* Batch Info */}
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-3 h-3 rounded-full bg-[#2563eb]" />
-            <span className="text-gray-700">Batch starts today</span>
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#2563eb]" />
+            </div>
+            <span className="text-[#334155] font-medium text-lg">Batch starts today</span>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="#pricing"
-              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3.5 rounded-lg transition-colors"
+              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold px-10 py-4 rounded-2xl transition-all shadow-md active:scale-95"
             >
               Enroll Now
             </Link>
             <Link
               href="#demo-form"
-              className="border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-semibold px-10 py-3.5 rounded-lg transition-colors"
+              className="border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-bold px-10 py-4 rounded-2xl transition-all active:scale-95"
             >
               Book a Free Demo
             </Link>

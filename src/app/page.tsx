@@ -2,7 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import ProgramOverview from "@/components/sections/ProgramOverview";
-import EligibilitySection from "@/components/sections/EligibilitySection";
+
 import LearnerExperiencesSection from "@/components/sections/LearnerExperiencesSection";
 import FeaturesStrip from "@/components/sections/FeaturesStrip";
 import UpgradesSection from "@/components/sections/UpgradesSection";
@@ -33,13 +33,8 @@ export default function Home() {
         <FeaturesStrip />
 
         {/* 3. Program Overview */}
-        <ProgramOverview />
+        {/* <ProgramOverview /> */}
 
-        {/* 4. Eligibility */}
-        <EligibilitySection />
-
-        {/* 5. Learner Experiences (Videos) */}
-        <LearnerExperiencesSection />
 
         {/* 6. Upgrades Section */}
         <UpgradesSection />
@@ -74,11 +69,16 @@ export default function Home() {
         {/* 16. Recognition */}
         <RecognitionSection />
 
+
         {/* 17. Payment Plans */}
         <PaymentPlans />
 
         {/* 18. FAQ */}
         <FAQSection />
+
+        
+        {/* 5. Learner Experiences (Videos) */}
+        <LearnerExperiencesSection />
 
         {/* 19. Media Section */}
         <MediaSection />

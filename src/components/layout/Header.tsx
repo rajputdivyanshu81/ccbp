@@ -19,32 +19,31 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white">
       {/* Main Header */}
       <nav className="border-b border-gray-100">
-        <div className="container mx-auto px-4 py-5">
+        <div className="container mx-auto px-2 py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex flex-col leading-tight">
-              <span className="text-[#2563eb] text-sm font-medium tracking-wide">
-                NXT WAVE
-              </span>
-              <span className="text-[#1e293b] text-xl font-bold tracking-tight">
-                INTENSIVE
-              </span>
+            <Link href="/" className="flex items-center">
+              <img 
+                src="https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/690d6fab0cae49e13e2d5ef9_Group%201000005139.png" 
+                alt="NxtWave Intensive" 
+                className="h-14 md:h-14 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
+                  className="text-gray-600 hover:text-gray-900 text-lg font-medium transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
               <Link
                 href="#"
-                className="inline-flex items-center gap-1 text-[#f97316] font-semibold text-sm hover:underline"
+                className="inline-flex items-center gap-1 text-[#007bff] font-semibold text-sm hover:underline"
               >
                 Login
                 <ArrowRight size={14} />
@@ -77,7 +76,7 @@ export default function Header() {
                 ))}
                 <Link
                   href="#"
-                  className="inline-flex items-center gap-1 text-[#f97316] font-semibold"
+                  className="inline-flex items-center gap-1 text-[#007bff] font-semibold"
                 >
                   Login
                   <ArrowRight size={14} />
@@ -88,21 +87,31 @@ export default function Header() {
         </div>
       </nav>
       {/* Announcement Bar */}
-      <div className="bg-[#1e293b] text-white py-4 px-4">
-        <div className="container mx-auto flex items-center justify-center gap-2 text-sm">
-          <span className="text-xl">🎆</span>
-          <span>
-            <span className="font-semibold">NxtWave Intensive Offline Center</span> is starting in{" "}
-            <span className="font-semibold">Hyderabad</span>.
-          </span>
+      <div className="bg-[#0a1324] text-white py-1.5 px-4 border-b border-white/5">
+        <div className="container mx-auto flex items-center justify-center gap-3 md:gap-6 text-[13px] md:text-lg tracking-wide">
+          <img 
+            src="https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/693301165bf6189393f060d8_Fireworks%202-min.png" 
+            alt="celebration" 
+            className="h-14 w-auto hidden sm:block"
+          />
+          <div className="flex items-center gap-2">
+            <span className="text-3xl">🎉</span>
+            <span className="text-[#dcf9a6] font-medium text-center">
+              NxtWave Intensive Offline Center is starting in Hyderabad.
+            </span>
+          </div>
           <Link
             href="#"
-            className="inline-flex items-center gap-1 font-semibold text-white hover:underline"
+            className="flex items-center gap-1.5 font-semibold text-white hover:opacity-80 transition-opacity whitespace-nowrap"
           >
             Check It Out
-            <ArrowRight size={14} />
+            <span className="text-lg leading-none mt-[-2px]">↗</span>
           </Link>
-          <span className="text-xl">🎆</span>
+          <img 
+            src="https://cdn.prod.website-files.com/5fa61cbbf0d432b3230f62b1/693301165bf6189393f060d8_Fireworks%202-min.png" 
+            alt="celebration" 
+            className="h-14 w-auto hidden sm:block"
+          />
         </div>
       </div>
 
